@@ -13,7 +13,7 @@
         "php": "^7.0",
         "symfony/framework-bundle": "^2.8",
         "kriswallsmith/buzz": "^0.15.0",
-        "symfony/config": "2.8"
+        "symfony/config": "^2.8"
     },
     "autoload": {
         "psr-4": {
