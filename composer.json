@@ -1,0 +1,28 @@
+{
+    "name": "elemecca/hipchat-bundle",
+    "description": "Write HipChat Integrations with Symfony.",
+    "type": "symfony-bundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sam Hanes",
+            "email": "sam@maltera.com"
+        }
+    ],
+    "require": {
+        "php": "^7.0",
+        "symfony/framework-bundle": "^2.8",
+        "kriswallsmith/buzz": "^0.15.0",
+        "symfony/config": "2.8"
+    },
+    "autoload": {
+        "psr-4": {
+            "Elemecca\\HipChatBundle\\": ""
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.1.x-dev"
+        }
+    }
+}
