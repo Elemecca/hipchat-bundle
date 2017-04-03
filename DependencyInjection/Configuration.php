@@ -1,6 +1,6 @@
 <?php
 
-namespace Elemecca\HipChatBundle\DependencyInjection;
+namespace Elemecca\HipchatBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;

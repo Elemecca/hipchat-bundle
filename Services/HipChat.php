@@ -1,6 +1,6 @@
 <?php
 
-namespace Elemecca\HipChatBundle\Services;
+namespace Elemecca\HipchatBundle\Services;
 
 class HipChat
 {

@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Elemecca\HipChatBundle\Controller;
+namespace Elemecca\HipchatBundle\Controller;
 
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
