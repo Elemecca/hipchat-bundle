@@ -18,6 +18,11 @@ class Configuration implements ConfigurationInterface
               ->isRequired()
               ->info('Registration info for the HipChat add-on')
               ->children()
+                ->scalarNode('key')
+                  ->isRequired()->cannotBeEmpty()
+                  ->info('A string that uniquely identifies the add-on')
+                ->end()
+
                 ->scalarNode('name')
                   ->isRequired()->cannotBeEmpty()
                   ->info('The display name of the add-on')
@@ -31,11 +36,6 @@ class Configuration implements ConfigurationInterface
                 ->scalarNode('homepage')
                   ->cannotBeEmpty()
                   ->info('The URL or route key to the homepage of the add-on')
-                ->end()
-
-                ->scalarNode('key')
-                  ->cannotBeEmpty()
-                  ->info("The add-on's registered Atlassian Marketplace key")
                 ->end()
 
                 ->arrayNode('vendor')
@@ -52,6 +52,21 @@ class Configuration implements ConfigurationInterface
                     ->end()
                   ->end()
                 ->end()
+              ->end()
+            ->end()
+
+            ->arrayNode('install')
+              ->addDefaultsIfNotSet()
+              ->info('Settings for the add-on installation process')
+              ->children()
+                ->booleanNode('allow_global')
+                  ->defaultTrue()
+                  ->info('Whether the add-on can be installed globally')
+                ->end()
+
+               ->booleanNode('allow_room')
+                ->defaultTrue()
+                ->info('Whether the add-on can be installed in a single room')
               ->end()
             ->end()
           ->end();

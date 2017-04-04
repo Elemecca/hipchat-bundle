@@ -11,16 +11,17 @@ class ElemeccaHipchatExtension extends Extension
 {
     public function load(array $configs, ContainerBuilder $container)
     {
+        $configuration = new Configuration();
+        $config = $this->processConfiguration($configuration, $configs);
+
+        $desc = array_merge($config['addon'], $config['install']);
+        $container->setParameter('elemecca_hipchat.descriptor', $desc);
+
+
         $loader = new XmlFileLoader(
             $container,
             new FileLocator(__DIR__ . '/../Resources/config')
         );
         //$loader->load('services.xml');
-
-        $configuration = new Configuration();
-        $config = $this->processConfiguration($configuration, $configs);
-
-        $desc = $config['addon'];
-        $container->setParameter('elemecca_hipchat.descriptor', $desc);
     }
 }

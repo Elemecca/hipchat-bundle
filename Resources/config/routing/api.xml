@@ -5,16 +5,31 @@
 
   <route id="elemecca_hipchat_descriptor"
          path="/descriptor.json" methods="GET">
-    <default key="_controller">ElemeccaHipChatBundle:Installation:descriptor</default>
+    <default key="_controller">ElemeccaHipchatBundle:Installation:descriptor</default>
   </route>
 
-  <route id="elemecca_hipchat_install"
+  <route id="elemecca_hipchat_redirect"
+         path="/install" methods="GET">
+    <default key="_controller">ElemeccaHipchatBundle:Installation:redirect</default>
+  </route>
+
+  <route id="elemecca_hipchat_install_server"
          path="/installation" methods="POST">
-    <default key="_controller">ElemeccaHipChatBundle:Installation:install</default>
+    <default key="_controller">ElemeccaHipchatBundle:Installation:installServer</default>
   </route>
 
-  <route id="elemecca_hipchat_remove"
+  <route id="elemecca_hipchat_remove_server"
          path="/installation/{id}" methods="DELETE">
-    <default key="_controller">ElemeccaHipChatBundle:Installation:remove</default>
+    <default key="_controller">ElemeccaHipchatBundle:Installation:removeServer</default>
+  </route>
+
+  <route id="elemecca_hipchat_install_client"
+         path="/installed" methods="GET">
+    <default key="_controller">ElemeccaHipchatBundle:Installation:installClient</default>
+  </route>
+
+  <route id="elemecca_hipchat_remove_client"
+         path="/removed" methods="GET">
+    <default key="_controller">ElemeccaHipchatBundle:Installation:removeClient</default>
   </route>
 </routes>
