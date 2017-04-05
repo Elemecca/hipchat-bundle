@@ -17,11 +17,20 @@ class ElemeccaHipchatExtension extends Extension
         $desc = array_merge($config['addon'], $config['install']);
         $container->setParameter('elemecca_hipchat.descriptor', $desc);
 
+        $container->setParameter(
+            'elemecca_hipchat.doctrine.orm_enabled',
+            true
+        );
+        $container->setParameter(
+            'elemecca_hipchat.doctrine.manager_name',
+            $config['doctrine']['manager_name']
+        );
+
 
         $loader = new XmlFileLoader(
             $container,
             new FileLocator(__DIR__ . '/../Resources/config')
         );
-        //$loader->load('services.xml');
+        $loader->load('services.xml');
     }
 }

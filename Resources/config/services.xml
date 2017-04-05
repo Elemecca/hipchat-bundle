@@ -4,5 +4,20 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
   <services>
+
+    <!-- essentially and alias for the configured Doctrine Manager -->
+    <service id="elemecca_hipchat.model_manager"
+             class="Doctrine\Common\Persistence\ObjectManager"
+             public="false">
+      <factory service="doctrine" method="getManager" />
+      <argument>%elemecca_hipchat.doctrine.manager_name%</argument>
+    </service>
+
+    <service id="elemecca_hipchat.installation_manager"
+             class="Elemecca\HipchatBundle\Service\InstallationManager">
+      <argument type="service" id="router" />
+      <argument type="service" id="elemecca_hipchat.model_manager" />
+      <argument>%elemecca_hipchat.descriptor%</argument>
+    </service>
   </services>
 </container>
